@@ -2,22 +2,18 @@ require 'spec_helper'
 
 describe "Dashboard" do
   it 'displays text messages received' do
+    #integrate twilio api
+    #send text msg to twilio number
+      #using phone or w/program?
+    #creates msg in db
+    #displays on dashboard - index route
+
   end
 
-  xit 'displays pictures received' do
+  xit 'allows a reply text to be sent to sender' do
   end
 
-  xit 'displays videos received' do
-  end
-
-  xit 'automatically creates a tracking number for each text' do
-    #controller/model
-  end
-
-  xit 'allows a reply text to be sent to victim' do
-  end
-
-  xit 'allows pre-made/canned replaies to be sent to victim' do
+  xit 'allows pre-made/canned replaies to be sent to sender' do
   end
 
   xit 'updates the status when a reply is sent' do

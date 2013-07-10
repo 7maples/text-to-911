@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :text_message do
+  factory :message do
     body "Help I'm trapped"
     phone_number "360-555-6240"
     status "received"
