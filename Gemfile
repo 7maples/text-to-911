@@ -20,8 +20,10 @@ group :development, :test do
   gem 'hirb'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'database_cleaner'
 end
 
 group :test do
   gem 'sqlite3'
+  gem 'factory_girl_rails'
 end
