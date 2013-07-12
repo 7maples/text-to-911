@@ -1,0 +1,23 @@
+<h2>Text Messages Received</h2V>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Message Body</th>
+    <th>Reply</th>
+    <th>Sender Phone Number</th>
+    <th>Time Received</th>
+    <th>Message ID</th>
+  </tr>
+
+  <% @messages.each do |message| %>
+    <tr>
+      <td><%= message.body %></td>
+      <td><%= "reply placeholder" %></td>
+      <td><%= message.phone_number %></td>
+      <td><%= message.created_at %></td>
+      <td><%= message.id %></td>
+    </tr>
+  <% end %>
+</table>
+
+

@@ -1,16 +1,11 @@
 require 'spec_helper'
 
 describe "Dashboard" do
-  it 'displays text messages received' do
-    #integrate twilio api
-    #send text msg to twilio number
-      #using phone or w/program?
-    #creates msg in db
-    #displays on dashboard - index route
 
-  end
-
-  xit 'allows a reply text to be sent to sender' do
+  it 'allows a reply text to be sent to sender' do
+    visit messages_path
+    fill_in reply, with: "testing testing 123"
+    # expect ???????
   end
 
   xit 'allows pre-made/canned replaies to be sent to sender' do
