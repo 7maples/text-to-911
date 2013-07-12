@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(:body => params[:Body], :phone_number => params[:From])
+    @message = Message.new(params[:message])
     @message.save
     render nothing: true
   end
