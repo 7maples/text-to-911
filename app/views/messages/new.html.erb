@@ -1,0 +1,8 @@
+<%= simple_form_for(@message) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :body %>
+  <%= f.input :phone_number %>
+
+  <%= f.error :base %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
