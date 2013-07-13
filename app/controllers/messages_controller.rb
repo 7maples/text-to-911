@@ -13,8 +13,5 @@ class MessagesController < ApplicationController
     @message.save
     render nothing: true
   end
-
-
 end
-
 

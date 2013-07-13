@@ -12,13 +12,14 @@
   <% @messages.each do |message| %>
     <tr>
       <td><%= message.body %></td>
-      <td><%= "reply placeholder" %></td>
+      <td><%= message.reply %></td>
       <td><%= message.phone_number %></td>
       <td><%= message.created_at %></td>
       <td><%= message.id %></td>
     </tr>
   <% end %>
 </table>
+
 
 
 
