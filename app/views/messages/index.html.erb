@@ -12,14 +12,18 @@
   <% @messages.each do |message| %>
     <tr>
       <td><%= message.body %></td>
-      <td><%= message.reply %></td>
+      <td><% if message.reply %>
+          <%= message.reply.body %>
+          <% else %>
+          <%= render :partial => 'replies/form' %>
+          <% end %>
+      </td>
       <td><%= message.phone_number %></td>
       <td><%= message.created_at %></td>
       <td><%= message.id %></td>
     </tr>
   <% end %>
 </table>
-
 
 
 

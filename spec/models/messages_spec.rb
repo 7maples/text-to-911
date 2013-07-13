@@ -18,6 +18,4 @@ describe "New Messages" do
     message.phone_number = nil
     expect(message).to have(1).errors_on(:phone_number)
   end
-
-
 end
