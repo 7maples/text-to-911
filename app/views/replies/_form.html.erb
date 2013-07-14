@@ -1,8 +1,8 @@
 <%= simple_form_for(@reply) do |f| %>
   <%= f.error_notification %>
   <%= f.text_field :body %>
-  <%= f.hidden_field :message_id, value: :message_id %>
-
+  <%= f.hidden_field :message_id, value: message_id %>
+  <%=  %>
   <%= f.error :base %>
   <%= f.submit "SEND", class: "btn btn-primary" %>
 <% end %>

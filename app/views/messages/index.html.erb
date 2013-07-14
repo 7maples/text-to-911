@@ -15,7 +15,7 @@
       <td><% if message.reply %>
           <%= message.reply.body %>
           <% else %>
-          <%= render :partial => 'replies/form', message_id: message.id %>
+          <%= render :partial => 'replies/form', locals: {message_id: message.id} %>
           <% end %>
       </td>
       <td><%= message.phone_number %></td>
