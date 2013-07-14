@@ -2,11 +2,7 @@ require 'spec_helper'
 
 describe "Dashboard" do
 
-  xit 'allows a reply text to be sent to sender' do
-    visit messages_path
-    fill_in reply, with: "testing testing 123"
-    # expect ???????
-  end
+
 
   xit 'allows pre-made/canned replaies to be sent to sender' do
   end

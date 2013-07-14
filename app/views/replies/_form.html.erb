@@ -1,7 +1,8 @@
 <%= simple_form_for(@reply) do |f| %>
+  <%= f.error_notification %>
   <%= f.text_field :body %>
+
+  <%= f.error :base %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
-
-
 

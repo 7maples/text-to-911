@@ -20,11 +20,10 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'database_cleaner'
+  gem 'pry'
 end
 
 group :test do
   gem 'sqlite3'
   gem 'factory_girl_rails'
-  gem 'vcr'
-  gem 'webmock'
 end

@@ -5,7 +5,6 @@ require 'rspec/rails'
 # Add this to load Capybara integration:
 require 'capybara/rspec'
 require 'capybara/rails'
-require 'vcr'
 
 RSpec.configure do |config|
   #Include Factory Girl syntax to simplify calls to factories
@@ -28,8 +27,3 @@ RSpec.configure do |config|
   end
 end
 
-VCR.configure do |c|
-  c.cassette_library_dir = 'fixtures/vcr_cassettes'
-  c.hook_into :webmock
-  c.ignore_localhost = true
-end
