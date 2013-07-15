@@ -16,4 +16,11 @@ describe "New Replies" do
     reply.message_id = nil
     expect(reply).to have(1).errors_on(:message_id)
   end
+
+  it "sends a text when a reply is created" do
+    VCR.use_cassette('send_reply') do
+      response = reply.send_reply
+      expect(response.status).to_not eq "failed"
+    end
+  end
 end

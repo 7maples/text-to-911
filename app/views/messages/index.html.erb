@@ -1,28 +1,38 @@
+<!doctype html>
+<html>
+ <head>
+   <meta charset="UTF-8" />
+   <title>Text-to-911 Prototype</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+ </head>
+
+<body>
 <h2>Text Messages Received</h2>
 
-<table class="table table-bordered">
-  <tr>
-    <th>Message Body</th>
-    <th>Reply</th>
-    <th>Sender Phone Number</th>
-    <th>Time Received</th>
-    <th>Message ID</th>
-  </tr>
-
-  <% @messages.each do |message| %>
+  <table class="table table-bordered">
     <tr>
-      <td><%= message.body %></td>
-      <td><% if message.reply %>
-          <%= message.reply.body %>
-          <% else %>
-          <%= render :partial => 'replies/form', locals: { message_id: message.id } %>
-          <% end %>
-      </td>
-      <td><%= message.phone_number %></td>
-      <td><%= message.created_at %></td>
-      <td><%= message.id %></td>
+      <th>Message</th>
+      <th>Reply</th>
+      <th>Sender Phone Number</th>
+      <th>Time Received</th>
+      <th>Message ID</th>
     </tr>
-  <% end %>
+
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%= message.body %></td>
+        <td><% if message.reply %>
+            <%= message.reply.body %>
+            <% else %>
+            <%= render :partial => 'replies/form', locals: { message_id: message.id } %>
+            <% end %>
+        </td>
+        <td><%= message.phone_number %></td>
+        <td><%= message.created_at %></td>
+        <td><%= message.id %></td>
+      </tr>
+    <% end %>
+  </body>
 </table>
 
 

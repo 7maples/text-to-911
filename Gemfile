@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'jquery-rails'
 gem 'simple_form'
+gem 'twilio-ruby'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -21,9 +22,12 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'database_cleaner'
   gem 'pry'
+  gem 'dotenv-rails'
 end
 
 group :test do
   gem 'sqlite3'
   gem 'factory_girl_rails'
+  gem 'webmock'
+  gem 'vcr'
 end
