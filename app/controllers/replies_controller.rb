@@ -2,9 +2,9 @@ class RepliesController < ApplicationController
 
   def create
     @reply = Reply.new(params[:reply])
-    @message_id = Message.find(params[:reply][:message_id])
     @reply.save
-    @reply.send_reply
+    @reply.dispatch
+    @reply.message.update_attributes(status: 'replied_to')
     redirect_to messages_path
   end
 end

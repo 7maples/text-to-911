@@ -5,7 +5,7 @@ class Reply < ActiveRecord::Base
 
   validates_presence_of :body, :message_id
 
-  def send_reply
+  def dispatch
     twilio_client = Twilio::REST::Client.new(twilio_sid, twilio_token)
 
     twilio_client.account.sms.messages.create(

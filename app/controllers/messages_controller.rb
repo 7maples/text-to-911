@@ -1,18 +1,16 @@
 class MessagesController < ApplicationController
 
   def index
-    @messages = Message.all
+    @messages = Message.order('status ASC')
     @reply = Reply.new
   end
 
   def new
-    @message = Message.new
-  end
-
-  def create
-    @message = Message.new(params[:message])
-    @message.save
+    message = Message.new(body: params[:Body], phone_number: params[:From])
+    message.save
     render nothing: true
   end
 end
+
+
 

@@ -19,7 +19,7 @@ describe "New Replies" do
 
   it "sends a text when a reply is created" do
     VCR.use_cassette('send_reply') do
-      response = reply.send_reply
+      response = reply.dispatch
       expect(response.status).to_not eq "failed"
     end
   end
