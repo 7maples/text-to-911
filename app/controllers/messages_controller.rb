@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
     @reply = Reply.new
   end
 
-  def new
+  def create
     message = Message.new(body: params[:Body], phone_number: params[:From])
     message.save
     render nothing: true
