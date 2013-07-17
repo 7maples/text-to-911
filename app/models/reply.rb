@@ -10,7 +10,7 @@ class Reply < ActiveRecord::Base
 
     twilio_client.account.sms.messages.create(
       :from => twilio_phone_number,
-      :to => sender_phone_number,
+      :to => message.phone_number,
       :body => body)
   end
 
@@ -24,9 +24,5 @@ class Reply < ActiveRecord::Base
 
   def twilio_phone_number
     ENV["TWILIO_PHONE_NUMBER"]
-  end
-
-  def sender_phone_number
-    ENV["SENDER_PHONE_NUMBER"]
   end
 end
