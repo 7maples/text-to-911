@@ -18,20 +18,40 @@
       <th>Message ID</th>
     </tr>
 
-    <% @messages.each do |message| %>
-      <tr>
-        <td><%= message.body %></td>
-        <td><% if message.reply %>
-            <%= message.reply.body %>
-            <% else %>
-            <%= render :partial => 'replies/form', locals: { message_id: message.id } %>
-            <% end %>
-        </td>
-        <td><%= message.phone_number %></td>
-        <td><%= message.created_at %></td>
-        <td><%= message.id %></td>
-      </tr>
-    <% end %>
+    <div id="messages">
+      <% @messages.each do |message| %>
+        <tr>
+          <td><%= message.body %></td>
+          <td><% if message.reply %>
+              <%= message.reply.body %>
+              <% else %>
+              <%= render :partial => 'replies/form', locals: { message_id: message.id } %>
+              <% end %>
+          </td>
+          <td><%= message.phone_number %></td>
+          <td><%= message.created_at %></td>
+          <td><%= message.id %></td>
+        </tr>
+      <% end %>
+    </div>
+
+    <script type="text/javascript">
+    $(document).ready(
+        function() {
+          setInterval(function() {
+              var randomnumber = Math.floor(Math.random() * 100);
+              $('#messages').text(
+                      'I am getting refreshed every 3 seconds..! Random Number ==> '
+                              + randomnumber);
+                      // or do refresh timestamp?
+              // make a web request /new_messages after timestamp
+              // have it watch if reply text has been clicked on/on focus so it
+              // won't refresh if someone is writing a text
+              // make a web request /messages.json
+              //
+          }, 3000);
+      });
+    </script>
   </body>
 </table>
 
