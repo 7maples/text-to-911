@@ -4,10 +4,13 @@
    <meta charset="UTF-8" />
    <title>Text-to-911 Prototype</title>
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   <script src="http://underscorejs.org/underscore.js"></script>
  </head>
 
 <body>
-<h2>Text Messages Received</h2>
+<div align=center>
+<h2>Text Messages Received @ Prospect</h2>
+</div>
 
   <table class="table table-bordered">
     <tr>
@@ -39,17 +42,13 @@
     $(document).ready(
         function() {
           setInterval(function() {
-              var randomnumber = Math.floor(Math.random() * 100);
-              $('#messages').text(
-                      'I am getting refreshed every 3 seconds..! Random Number ==> '
-                              + randomnumber);
-                      // or do refresh timestamp?
-              // make a web request /new_messages after timestamp
-              // have it watch if reply text has been clicked on/on focus so it
-              // won't refresh if someone is writing a text
-              // make a web request /messages.json
-              //
-          }, 3000);
+              var isEmpty = function(textArea) {return $(textArea).val() === ""};
+              var textBoxes = $('textarea');
+
+              if (_.every(textBoxes, isEmpty)) {
+              location.reload();
+              }
+          }, 10000);
       });
     </script>
   </body>
