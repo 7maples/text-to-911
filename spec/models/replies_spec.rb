@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe "New Replies" do
-  let(:reply) { build(:reply, body: "Stop drop and roll", message_id: 2) }
+  let(:reply) { build(:reply, body: "Stop drop and roll",
+                              message_id: 2) }
 
   it "has a valid factory" do
     expect(reply).to be_valid

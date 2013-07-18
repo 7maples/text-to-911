@@ -9,8 +9,9 @@ describe "New Messages" do
     expect(message).to be_valid
   end
 
-  it 'is invalid without a body' do
+  it 'is invalid without either a body or photo_url' do
     message.body = nil
+    message.photo_url = nil
     expect(message).to have(1).errors_on(:body)
   end
 

@@ -24,7 +24,12 @@
     <div id="messages">
       <% @messages.each do |message| %>
         <tr>
-          <td><%= message.body %></td>
+          <td><% if message.body == nil %>
+              <%= image_tag message.photo_url, size: '240x240' %>
+              <% else %>
+              <%= message.body %>
+              <% end %>
+          </td>
           <td><% if message.reply %>
               <%= message.reply.body %>
               <% else %>
