@@ -2,3 +2,11 @@ Text-to-911 Prototype
 
 Tools to enable dispatch centers to accept and analyze text messages, pictures and videos sent to 911.
 
+To Start the Program:
+
+Start the Rails server, then in another tab start Local Tunnel:
+localtunnel -k ~/.ssh/id_rsa.pub 3000
+
+This assigns a new URL, update your Twilio account to point to this.
+
+
